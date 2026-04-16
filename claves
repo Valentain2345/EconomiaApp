@@ -1,1 +1,36 @@
-Contraseña claves android: econApp2026
+Como generar el apk para correr en android de manera manual
+1. npx expo prebuild
+2. cd android
+3. keytool -genkeypair -v -storetype PKCS12 -keystore econApp-release-key.keystore -alias econApp-release-key -keyalg RSA -keysize 2048 -validity 10000
+4. Copiar el archivo generado (econApp-release-key.keystore) a android/app/
+5. Abrir android/gradle.properties
+6. Agregar abajo del todo:
+    MYAPP_UPLOAD_STORE_FILE=econApp-release-key.keystore
+    MYAPP_UPLOAD_KEY_ALIAS=econApp-release-key
+    MYAPP_UPLOAD_STORE_PASSWORD=yourpassword --> la Contraseña que hayan puesto al generar las claves
+    MYAPP_UPLOAD_KEY_PASSWORD=yourpassword --> lo mismo que arriba
+7.Abrir android/app/build.gradle
+ Adentro de android{} agregar esto a signingConfigs
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_UPLOAD_STORE_FILE)
+            storePassword MYAPP_UPLOAD_STORE_PASSWORD
+            keyAlias MYAPP_UPLOAD_KEY_ALIAS
+            keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+        }
+    }
+ Y en buildTypes cambiar
+    release {
+        signingConfig signingConfigs.release
+    }
+8. Para correr en linux/macOS  ./gradlew assembleRelease en Windows gradlew.bat assembleRelease
+9. El apk se encuentra en android/app/build/outputs/apk/release/app-release.apk y lo pueden instalar en su celu con adb o simplemente copiarlo e instalarlo desde el celu
+
+
+Contraseña claves android que puse yo: econApp2026
+
+
+Como generar el apk de manera mas automatica
+1. npx expo prebuild
+2. npm run android-build-X--->X=windows si usan windows o X=linux si usan linux o macOs
+

@@ -7,10 +7,12 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "android-build-linux": "npx expo prebuild && cd android && ./gradlew assembleDebug && echo 'APK generated at: android/app/build/outputs/apk/debug/app-debug.apk'",
-    "android-build-windows": "npx expo prebuild && cd android && gradlew.bat assembleDebug && echo 'APK generated at: android/app/build/outputs/apk/debug/app-debug.apk'"
+    "android-build-linux": "cd android && ./gradlew assembleRelease && echo 'APK generated at: android/app/build/outputs/apk/release/app-release.apk'",
+    "android-build-windows": "cd android && gradlew.bat assembleRelease && echo 'APK generated at: android/app/build/outputs/apk/release/app-release.apk'",
+    "web-build":"expo export"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
     "expo": "~54.0.33",
     "expo-status-bar": "~3.0.9",
     "expo-system-ui": "~6.0.9",
