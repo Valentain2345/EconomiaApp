@@ -31,6 +31,9 @@ Contraseña claves android que puse yo: econApp2026
 
 
 Como generar el apk de manera mas automatica
+
 1. npx expo prebuild
 2. npm run android-build-X--->X=windows si usan windows o X=linux si usan linux o macOs
 
+Como generar el sitio web minificado
+1. npm run web-build
