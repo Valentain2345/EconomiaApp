@@ -8,6 +8,7 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
+build/
 
 # Native
 .kotlin/
@@ -20,6 +21,7 @@ expo-env.d.ts
 
 # Metro
 .metro-health-check*
+.cache/
 
 # debug
 npm-debug.*
@@ -37,5 +39,21 @@ yarn-error.*
 *.tsbuildinfo
 
 # generated native folders
-/ios
-/android
+
+
+
+# Android native
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+
+
+# iOS native 
+Pods/
+*.xcworkspace
+*.xcodeproj
+
+# IDEs
+.vscode/
+.idea/
