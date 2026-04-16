@@ -9,7 +9,7 @@
     "web": "expo start --web",
     "android-build-linux": "cd android && ./gradlew assembleRelease && echo 'APK generated at: android/app/build/outputs/apk/release/app-release.apk'",
     "android-build-windows": "cd android && gradlew.bat assembleRelease && echo 'APK generated at: android/app/build/outputs/apk/release/app-release.apk'",
-    "web-build":"expo export"
+    "web-build": "expo export"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -17,7 +17,10 @@
     "expo-status-bar": "~3.0.9",
     "expo-system-ui": "~6.0.9",
     "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-web": "^0.21.0"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",

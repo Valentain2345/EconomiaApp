@@ -34,6 +34,8 @@ Como generar el apk de manera mas automatica
 
 1. npx expo prebuild
 2. npm run android-build-X--->X=windows si usan windows o X=linux si usan linux o macOs
+3. copiar apk en el celu e instalar
 
 Como generar el sitio web minificado
 1. npm run web-build
+2. se genera la carpeta dist y la pueden servir con serve 
