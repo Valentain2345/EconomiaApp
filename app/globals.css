@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0b0e;
+  --panel: #121218;
+  --glass: rgba(255, 255, 255, 0.06);
+  --text: #f5f7fa;
+  --muted: #a0a6b0;
+  --accent: #1db954;
+  --accent2: #4cc9f0;
+  --warm: #ffb86b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(76, 201, 240, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(29, 185, 84, 0.16), transparent 55%),
+    var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background: rgba(76, 201, 240, 0.35);
+  color: var(--text);
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  background-position: -1px -1px;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #9fe6ff 40%, #7ff1b8 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@layer utilities {
+  .section-pad {
+    @apply py-24 md:py-32;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+}
