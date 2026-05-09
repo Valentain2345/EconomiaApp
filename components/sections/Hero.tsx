@@ -39,6 +39,9 @@ export default function Hero() {
             <Button href="#demo" variant="outline" size="lg">
               Ver demo
             </Button>
+            <Button href="https://economia-app-nelk.vercel.app/" size="lg">
+              Probar Alpha
+            </Button>
           </div>
           <div className="flex flex-wrap gap-3 text-sm text-muted">
             {brand.micro}
